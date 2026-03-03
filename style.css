@@ -97,6 +97,7 @@ header h1 {
     font-weight: 700;
     margin-bottom: 8px;
     background: linear-gradient(to right, #60a5fa, #34d399);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -122,7 +123,7 @@ header p {
 .star-rating {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 .star-btn {
@@ -130,26 +131,28 @@ header p {
     border: none;
     cursor: pointer;
     color: var(--star-empty);
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 4px;
 }
 
 .star-btn i {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     stroke-width: 1.5;
+}
+
+.star-btn:hover {
+    color: rgba(251, 191, 36, 0.6);
+    transform: scale(1.15) translateY(-3px);
 }
 
 .star-btn.active {
     color: var(--star-active);
-    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.4));
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.5));
 }
 
 .star-btn.active i {
     fill: var(--star-active);
-}
-
-.star-btn:hover {
-    transform: scale(1.2);
 }
 
 textarea,
