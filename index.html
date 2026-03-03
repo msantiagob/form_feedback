@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Califica tu Clase</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <div class="card" id="form-card">
+            <header>
+                <h1>Califica tu clase</h1>
+                <p>Tu opinión nos ayuda a mejorar cada día.</p>
+            </header>
+
+            <form id="rating-form">
+                <div class="form-group">
+                    <label>Calificación (1-5 estrellas) *</label>
+                    <div class="star-rating" id="star-container">
+                        <button type="button" class="star-btn" data-value="1"><i data-lucide="star"></i></button>
+                        <button type="button" class="star-btn" data-value="2"><i data-lucide="star"></i></button>
+                        <button type="button" class="star-btn" data-value="3"><i data-lucide="star"></i></button>
+                        <button type="button" class="star-btn" data-value="4"><i data-lucide="star"></i></button>
+                        <button type="button" class="star-btn" data-value="5"><i data-lucide="star"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="observations">Recomendaciones u observaciones</label>
+                    <textarea id="observations" placeholder="¿Qué te gustaría ver en la próxima clase?" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-name">Nombre (Opcional)</label>
+                    <input type="text" id="user-name" placeholder="Tu nombre">
+                </div>
+
+                <div id="error-message" class="error-text"></div>
+
+                <button type="submit" id="submit-btn" class="submit-btn">
+                    <span class="btn-text">Enviar Calificación</span>
+                    <i data-lucide="send" class="btn-icon"></i>
+                    <div class="loader" id="btn-loader"></div>
+                </button>
+            </form>
+        </div>
+
+        <div class="card success-card hidden" id="success-card">
+            <div class="success-icon">
+                <i data-lucide="check-circle-2"></i>
+            </div>
+            <h2>¡Gracias por tu calificación!</h2>
+            <p>Tus comentarios han sido recibidos con éxito.</p>
+            <button id="reset-btn" class="reset-btn">Enviar otra respuesta</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
